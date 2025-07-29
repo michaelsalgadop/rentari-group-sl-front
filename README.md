@@ -1,0 +1,80 @@
+
+# 🚗 Rentari
+
+**Rentari** es una aplicación web diseñada para cubrir las necesidades de movilidad de nuestros clientes, permitiéndoles disponer de un coche —o varios— sin necesidad de adquirirlo permanentemente. Con Rentari, puedes cambiar de vehículo cuando lo necesites, de forma sencilla, clara y sin complicaciones.
+
+---
+
+## ✨ Características principales
+
+- 🔍 **Catálogo de vehículos actualizado**
+  - Furgonetas, SUVs, berlinas, urbanos y más.
+  - Filtros por tipo, marca, año, potencia o combustible.
+
+- 👤 **Panel de usuario**
+  - Historial de rentings realizados.
+  - Seguimiento de presupuesto y gastos acumulados.
+
+- 💰 **Presupuestos automáticos**
+  - Calculadora integrada de gastos mensuales.
+  - Detalle completo de cada renting sin que tengas que hacer números.
+
+- 🔁 **Flexibilidad sin permanencia**
+  - Cambia de coche cuando lo necesites.
+  - Sin compromiso a largo plazo.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- **React.js** con React Router
+- **Bootstrap 4** para estilos responsivos
+- **Supabase** para el almacenamiento de imágenes
+- **MongoDB** como base de datos principal
+- **React Icons** y **Fontsource** para UI/UX
+
+---
+
+## 🚀 Instalación local
+
+Clona el repositorio y ejecuta el proyecto:
+
+```bash
+git clone https://github.com/tuusuario/rentari-group-sl-front.git
+cd rentari-group-sl-front
+npm install
+npm start
+```
+
+---
+
+## 🧪 Estado del proyecto
+
+Rentari está actualmente en desarrollo activo. Las principales funcionalidades ya implementadas incluyen:
+
+- ✅ Catálogo interactivo  
+- ✅ Sistema de autenticación  
+- ✅ Gestión de rentings  
+- ✅ Diseño responsive (mobile & desktop)  
+- ✅ Almacenamiento de imágenes vía Supabase  
+
+**Próximas mejoras:**
+
+- 💳 Integración de pagos (modo demo)  
+- 🛠️ Panel administrativo para gestión de flota  
+- 🔍 Filtros avanzados por disponibilidad y localización  
+
+---
+
+## 📄 Nota legal
+
+Este proyecto es una demostración **educativa y ficticia**, sin ninguna finalidad comercial.  
+Las marcas de vehículos mostradas son utilizadas únicamente con fines ilustrativos y no representan una afiliación real con Rentari.
+
+---
+
+## 📩 Contacto
+
+¿Tienes dudas, sugerencias o deseas colaborar?
+
+📧 **rentarigroupsl@gmail.com**
