@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  color: var(--color-secundario) !important;
+  font-family: var(--fuente-principal) !important;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none !important;
+}

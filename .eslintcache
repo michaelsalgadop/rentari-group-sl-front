@@ -1,0 +1,223 @@
+[{
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\index.js": "1",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\App.js": "2",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\reportWebVitals.js": "3",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\ListadoPagina.js": "4",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\InicioPagina.js": "5",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\LoginPagina.js": "6",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\NotFoundPagina.js": "7",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\componentes\\Cabecera.js": "8",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\componentes\\Logout.js": "9",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\contextos\\AuthContextProvider.js": "10",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\contextos\\AuthContext.js": "11",
+        "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\componentes\\RutaProtegida.js": "12"
+    },
+    {
+        "size": 547,
+        "mtime": 1626342084471,
+        "results": "13",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 1432,
+        "mtime": 1626343158556,
+        "results": "15",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 362,
+        "mtime": 499162500000,
+        "results": "16",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 939,
+        "mtime": 1626345386252,
+        "results": "17",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 200,
+        "mtime": 1626342371616,
+        "results": "18",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 2247,
+        "mtime": 1626344858027,
+        "results": "19",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 70,
+        "mtime": 1626341882715,
+        "results": "20",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 937,
+        "mtime": 1626342480235,
+        "results": "21",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 281,
+        "mtime": 1626344782719,
+        "results": "22",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 805,
+        "mtime": 1626345136919,
+        "results": "23",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 84,
+        "mtime": 1626342642052,
+        "results": "24",
+        "hashOfConfig": "14"
+    },
+    {
+        "size": 443,
+        "mtime": 1626344628173,
+        "results": "25",
+        "hashOfConfig": "14"
+    },
+    {
+        "filePath": "26",
+        "messages": "27",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    "zdo62k",
+    {
+        "filePath": "29",
+        "messages": "30",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    {
+        "filePath": "31",
+        "messages": "32",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    {
+        "filePath": "33",
+        "messages": "34",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0
+    },
+    {
+        "filePath": "35",
+        "messages": "36",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    {
+        "filePath": "37",
+        "messages": "38",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0
+    },
+    {
+        "filePath": "39",
+        "messages": "40",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    {
+        "filePath": "41",
+        "messages": "42",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    {
+        "filePath": "43",
+        "messages": "44",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0
+    },
+    {
+        "filePath": "45",
+        "messages": "46",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0
+    },
+    {
+        "filePath": "47",
+        "messages": "48",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0,
+        "usedDeprecatedRules": "28"
+    },
+    {
+        "filePath": "49",
+        "messages": "50",
+        "errorCount": 0,
+        "warningCount": 0,
+        "fixableErrorCount": 0,
+        "fixableWarningCount": 0
+    },
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\index.js", [],
+    [
+        "51",
+        "52"
+    ],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\App.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\reportWebVitals.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\ListadoPagina.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\InicioPagina.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\LoginPagina.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\paginas\\NotFoundPagina.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\componentes\\Cabecera.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\componentes\\Logout.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\contextos\\AuthContextProvider.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\contextos\\AuthContext.js", [],
+    "C:\\formaciones\\enfoca't II\\C4\\ejercicios\\ejercicio-nodejs-8-autentificación-correccion\\frontal\\src\\componentes\\RutaProtegida.js", [],
+    {
+        "ruleId": "53",
+        "replacedBy": "54"
+    },
+    {
+        "ruleId": "55",
+        "replacedBy": "56"
+    },
+    "no-native-reassign", [
+        "57"
+    ],
+    "no-negated-in-lhs", [
+        "58"
+    ],
+    "no-global-assign",
+    "no-unsafe-negation"
+]

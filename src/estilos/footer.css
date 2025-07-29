@@ -1,0 +1,28 @@
+.footer .footer-col {
+  text-align: center;
+}
+.logo-footer {
+  max-width: 140px;
+}
+.listado-footer,
+.copyright,
+.creator {
+  font-size: 14px;
+}
+.social-networks {
+  font-size: 30px;
+}
+.social-networks li + li {
+  margin-left: 5px;
+}
+.social-networks .link-network {
+  color: var(--color-secundario);
+}
+.creator .link-creator {
+  color: var(--color-principal);
+}
+@media (min-width: 768px) {
+  .footer .footer-col {
+    text-align: left;
+  }
+}

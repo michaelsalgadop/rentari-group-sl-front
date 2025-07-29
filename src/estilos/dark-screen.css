@@ -1,0 +1,20 @@
+.dark-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: var(--color-secundario);
+  z-index: 150;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.dark-screen.show {
+  visibility: visible;
+  opacity: 0.7;
+}

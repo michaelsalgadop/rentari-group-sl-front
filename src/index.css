@@ -1,0 +1,11 @@
+@import "./estilos/variables.css";
+@import "./estilos/base.css";
+@import "./estilos/utilities.css";
+@import "./estilos/layout.css";
+@import "./estilos/header.css";
+@import "./estilos/navigation.css";
+@import "./estilos/landing.css";
+@import "./estilos/dark-screen.css";
+@import "./estilos/footer.css";
+@import "./estilos/others.css";
+@import "./estilos/swiper.css";

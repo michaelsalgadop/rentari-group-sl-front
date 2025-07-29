@@ -1,0 +1,17 @@
+.cabecera {
+  z-index: 100;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  padding: 15px;
+  box-shadow: 0px 1px 5px 0px rgba(125, 125, 125, 0.71);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(125, 125, 125, 0.71);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(125, 125, 125, 0.71);
+}
+.footer {
+  position: relative;
+  background-color: #fff;
+  padding: 15px;
+  border-top: 1px solid var(--color-principal);
+  z-index: 1;
+}

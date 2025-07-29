@@ -1,0 +1,134 @@
+.seccion-howtouse,
+.seccion-ventajas,
+.seccion-testimonios,
+.seccion-cta {
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contenedor-howtouse,
+.contenedor-ventaja-desventaja {
+  width: 100%;
+  min-height: 150px;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.contenedor-ventaja-desventaja > .icono,
+.columna-howtouse > .icono {
+  font-size: 50px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.subtitulo-howtouse,
+.pulsa-slider {
+  margin-bottom: 20px;
+}
+/* Seccion Hero */
+
+.seccion-hero {
+  background-color: var(--color-principal);
+  height: 400px;
+  align-items: center;
+  position: relative;
+}
+
+.contenedor-hero {
+  padding: 20px 0;
+  color: var(--color-letra-hero);
+  z-index: 1;
+  min-width: 200px;
+}
+
+.titulo-hero {
+  font-size: 32px;
+}
+
+.coche-hero {
+  position: fixed;
+  width: 500px;
+  right: -212px;
+  z-index: 0;
+}
+.seccion-hero .btn.cta,
+.seccion-hero .btn.cta:hover {
+  color: var(--color-secundario);
+  background-color: #fff;
+}
+/*Seccion Como Funciona*/
+.columna-howtouse {
+  color: var(--color-principal);
+  font-size: 14px;
+}
+.numero-howtouse {
+  font-size: 18px;
+}
+/* Seccion Ventajas */
+
+.fila-slider {
+  padding-top: 15px;
+}
+.pulsa-slider {
+  font-size: 12px;
+  display: inline-block;
+}
+/* Sección CTA */
+.seccion-cta .btn.cta {
+  background-color: var(--color-principal);
+  color: #fff;
+}
+.seccion-cta .btn.cta:hover {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  /* Seccion Hero */
+  .titulo-hero {
+    font-size: 40px;
+  }
+  .frase-hero {
+    font-size: 18px;
+  }
+  .coche-hero {
+    width: 570px;
+  }
+  .btn.cta {
+    font-size: 20px;
+  }
+  /* Seccion Ventajas */
+  .subtitulo-howtouse,
+  .pulsa-slider {
+    margin-bottom: 70px;
+  }
+  /*Seccion Testimonios*/
+}
+@media (min-width: 1024px) {
+  /* Seccion Hero */
+  .titulo-hero {
+    font-size: 50px;
+  }
+  .frase-hero {
+    font-size: 26px;
+  }
+  .coche-hero {
+    width: 610px;
+  }
+  .btn.cta {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1280px) {
+  /* Seccion Hero */
+  .titulo-hero {
+    font-size: 60px;
+  }
+  .frase-hero {
+    font-size: 28px;
+  }
+  .coche-hero {
+    width: 810px;
+  }
+}
