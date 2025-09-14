@@ -4,6 +4,7 @@ import { BtnHamburguesa } from "./Navbar/BtnHamburguesa";
 import { Logo } from "./Logo";
 import { Navbar } from "./Navbar/Navbar";
 import { NavbarMobile } from "./Navbar/NavbarMobile";
+import { NavLink } from "react-router-dom";
 
 export const Cabecera = () => {
   const { setShowBar, showBar } = useContext(DarkScreenContext);
@@ -15,7 +16,7 @@ export const Cabecera = () => {
       <header className="cabecera">
         <div className="row justify-content-between">
           <div className="col-7 col-md-4">
-            <a href="/" className="d-flex align-items-center">
+            <NavLink to="/" className="d-flex align-items-center">
               <Logo
                 alt="Logo de Rentari, empresa de renting de coches"
                 width="40px"
@@ -23,7 +24,7 @@ export const Cabecera = () => {
                 className="imagen-corporativa img-fluid mr-1"
               ></Logo>
               <span className="titulo-corporativo">RENTARI</span>
-            </a>
+            </NavLink>
           </div>
           <BtnHamburguesa
             mostrarOcultarBarraMobile={mostrarOcultarBarraMobile}

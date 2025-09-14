@@ -1,0 +1,34 @@
+.cuerpo-pagina {
+  min-height: calc(100vh - 662px);
+}
+.titulo-pagina {
+  font-size: 35px;
+  color: var(--color-principal);
+}
+
+.espaciado-bloques {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.espaciado-bloques + .espaciado-bloques {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.espaciado-bloques:first-child {
+  margin-top: 50px;
+}
+.espaciado-bloques:last-child {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .titulo-pagina {
+    font-size: 40px;
+  }
+  .espaciado-bloques {
+    margin-top: 0;
+  }
+  .cuerpo-pagina {
+    min-height: calc(100vh - 420px);
+  }
+}
