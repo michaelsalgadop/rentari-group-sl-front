@@ -1,4 +1,4 @@
-.page-not-found {
+.full-page {
   height: calc(100vh - 662px);
   min-height: 200px;
   display: flex;
@@ -6,8 +6,24 @@
   align-items: center;
   text-align: center;
 }
+.loading-circle {
+  color: var(--color-principal);
+  font-size: 60px;
+  transition: loading 1s;
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 768px) {
-  .page-not-found {
+  .full-page {
     height: calc(100vh - 382px);
   }
 }

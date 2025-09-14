@@ -6,6 +6,10 @@
   font-weight: bold !important;
 }
 
+.color-primary {
+  color: var(--color-principal) !important;
+}
+
 .color-success {
   color: var(--color-success) !important;
 }
@@ -21,7 +25,11 @@
 .border-danger {
   border-color: var(--color-danger) !important;
 }
-
+.btn.btn-primary,
+.btn.btn-primary:hover {
+  background-color: var(--color-principal);
+  color: #fff;
+}
 .switch {
   display: inline-block;
   height: 34px;

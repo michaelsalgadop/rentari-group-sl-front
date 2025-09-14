@@ -1,0 +1,99 @@
+.contenedor-login {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenedor-perfil {
+  padding: 15px;
+}
+.profile-name-user,
+.dato-numero {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--color-principal);
+}
+.dato-usuario {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.dato-numero {
+  display: block;
+}
+.dato-texto,
+.profile-mail,
+.btn.btn-ver-vehiculos {
+  font-size: 14px;
+  font-weight: bold;
+}
+.contenedor-icono-presupuesto {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  background: var(--color-terciario);
+  margin-bottom: 10px;
+}
+.icono-presupuesto {
+  width: 45px;
+  height: 45px;
+  color: var(--color-principal);
+}
+.btn.btn-ver-vehiculos {
+  background-color: var(--color-principal);
+  color: #fff;
+}
+.icono-atencion {
+  font-size: 100px;
+}
+.titulo-atencion-eliminar-usuario {
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.texto-atencion-eliminar-usuario {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .contenedor-login {
+    height: calc(100vh - 470px);
+  }
+  .contenedor-perfil {
+    margin-bottom: 0;
+  }
+  .icono-presupuesto {
+    width: 55px;
+    height: 55px;
+  }
+}
+@media (min-width: 1024px) {
+  .dato-texto,
+  .profile-mail,
+  .btn.btn-ver-vehiculos {
+    font-size: 18px;
+  }
+  .profile-name-user,
+  .dato-numero {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  .icono-presupuesto {
+    width: 60px;
+    height: 60px;
+  }
+  .profile-name-user,
+  .dato-numero {
+    font-size: 40px;
+  }
+  .dato-texto,
+  .profile-mail,
+  .btn.btn-ver-vehiculos {
+    font-size: 22px;
+  }
+}

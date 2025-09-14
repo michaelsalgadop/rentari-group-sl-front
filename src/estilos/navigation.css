@@ -51,6 +51,7 @@ nav.navegacion-mobile > ul > li + li {
 .icon-nav {
   margin-right: 10px;
   font-size: 16px;
+  min-width: 16px;
 }
 .icon-nav.arrow-left-bracket {
   transform: rotateY(180deg);

@@ -10,7 +10,7 @@ export const DarkScreenContextProvider = (props) => {
       value={{ showBar, setShowBar, loading, setLoading }}
     >
       <div className={`dark-screen ${showBar || loading ? "show" : ""}`}>
-        {loading ? "Loading..." : ""}
+        {loading ? "Cargando..." : ""}
       </div>
       {children}
     </DarkScreenContext.Provider>
