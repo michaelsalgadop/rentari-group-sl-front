@@ -15,6 +15,12 @@ export const useAlert = () => {
       title: "ERROR",
       text: msg,
     });
+  const alertErrorHTML = (msg) =>
+    Swal.fire({
+      icon: "error",
+      title: "ERROR",
+      html: msg,
+    });
   const alertInfo = (msg) =>
     Swal.fire({
       icon: "info",
@@ -46,5 +52,5 @@ export const useAlert = () => {
       showConfirmButton: false,
       timer: 1500,
     }).then(funcion());
-  return { alertSuccess, alertError, alertInfo, alertConfirm };
+  return { alertSuccess, alertError, alertInfo, alertConfirm, alertErrorHTML };
 };

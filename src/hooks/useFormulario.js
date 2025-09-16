@@ -16,5 +16,8 @@ export const useFormulario = (objFormulario) => {
     });
   };
 
-  return { datosFormulario, setData };
+  const resetFormulario = () => {
+    setDatosFormulario(objFormulario);
+  };
+  return { datosFormulario, setData, resetFormulario };
 };
