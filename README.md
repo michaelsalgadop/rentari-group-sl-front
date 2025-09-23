@@ -1,15 +1,15 @@
 
 # 🚗 Rentari
 
-**Rentari** es una aplicación web diseñada para cubrir las necesidades de movilidad de nuestros clientes, permitiéndoles disponer de un coche —o varios— sin necesidad de adquirirlo permanentemente. Con Rentari, puedes cambiar de vehículo cuando lo necesites, de forma sencilla, clara y sin complicaciones.
+**Rentari** es una aplicación web diseñada para cubrir las necesidades de movilidad de nuestros clientes, permitiéndoles disponer de un coche —o varios— sin necesidad de adquirirlo permanentemente.
 
 ---
 
 ## ✨ Características principales
 
-- 🔍 **Catálogo de vehículos actualizado**
+- 🔍 **Catálogo de vehículos**
   - Furgonetas, SUVs, berlinas, urbanos y más.
-  - Filtros por tipo, marca, año, potencia o combustible.
+  - Filtros por marca, modelo, precio, kilometros o tipo.
 
 - 👤 **Panel de usuario**
   - Historial de rentings realizados.
@@ -17,11 +17,11 @@
 
 - 💰 **Presupuestos automáticos**
   - Calculadora integrada de gastos mensuales.
-  - Detalle completo de cada renting sin que tengas que hacer números.
+  - Trabajando para tener cada detalle completo de cada renting sin que tengas que hacer números.
 
-- 🔁 **Flexibilidad sin permanencia**
-  - Cambia de coche cuando lo necesites.
-  - Sin compromiso a largo plazo.
+- 🔁 **Flexibilidad**
+  - Con varios plazos de renting disponibles.
+  - Elige el que más se ajuste a tus necesidades.
 
 ---
 
