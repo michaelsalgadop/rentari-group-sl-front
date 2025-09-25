@@ -64,7 +64,7 @@
   position: fixed;
   top: 78px;
   background-color: #fff;
-  z-index: 140;
+  z-index: 99;
   padding: 15px;
   margin-left: -15px;
   margin-right: -15px;
@@ -231,22 +231,25 @@
   .espaciado-busqueda {
     margin-top: 100px;
   }
-}
-@media (min-width: 1440px) {
-  .contenedor-filtro {
-    min-width: 800px;
-  }
-
-  .texto-propiedades-vehiculo,
   .texto-numeros-renting {
     text-align: left;
   }
-  .valor-propiedades-vehiculo,
   .valor-numeros-renting {
     text-align: right;
   }
   .texto-incluye,
   .renting-incluye {
     text-align: left;
+  }
+}
+@media (min-width: 1440px) {
+  .contenedor-filtro {
+    min-width: 800px;
+  }
+  .texto-propiedades-vehiculo {
+    text-align: left;
+  }
+  .valor-propiedades-vehiculo {
+    text-align: right;
   }
 }
