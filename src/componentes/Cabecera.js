@@ -4,16 +4,19 @@ import { BtnHamburguesa } from "./Navbar/BtnHamburguesa";
 import { Logo } from "./Logo";
 import { Navbar } from "./Navbar/Navbar";
 import { NavbarMobile } from "./Navbar/NavbarMobile";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export const Cabecera = () => {
   const { setShowBar, showBar } = useContext(DarkScreenContext);
+  const location = useLocation();
   const mostrarOcultarBarraMobile = () => {
     setShowBar(!showBar);
   };
   return (
     <>
-      <header className="cabecera">
+      <header
+        className={`cabecera ${location.pathname === "/search" ? "header-cabecera" : ""}`}
+      >
         <div className="row justify-content-between">
           <div className="col-7 col-md-4">
             <NavLink to="/" className="d-flex align-items-center">
