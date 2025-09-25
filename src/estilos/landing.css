@@ -76,14 +76,6 @@
   font-size: 12px;
   display: inline-block;
 }
-/* Sección CTA */
-.seccion-cta .btn.cta {
-  background-color: var(--color-principal);
-  color: #fff;
-}
-.seccion-cta .btn.cta:hover {
-  color: #fff;
-}
 @media (min-width: 768px) {
   /* Seccion Hero */
   .titulo-hero {

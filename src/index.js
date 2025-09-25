@@ -6,6 +6,7 @@ import "@fontsource/montserrat/400.css"; // normal
 import "@fontsource/montserrat/700.css"; // bold
 import "swiper/css";
 import "swiper/css/navigation";
+import "intersection-observer";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root")); // Crear el root

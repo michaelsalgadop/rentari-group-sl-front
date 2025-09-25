@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="seccion-hero row">
       <img
@@ -11,7 +14,12 @@ export const Hero = () => {
         <p className="frase-hero">
           Compara, elige y conduce. Sin complicaciones.
         </p>
-        <button className="cta btn btn-light mt-2">Empieza a comparar</button>
+        <button
+          className="cta btn btn-light mt-2"
+          onClick={() => navigate("/search")}
+        >
+          Empieza a comparar
+        </button>
       </div>
     </section>
   );
