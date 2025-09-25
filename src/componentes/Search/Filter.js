@@ -1,6 +1,22 @@
+import { useContext } from "react";
+import { FaTimes } from "react-icons/fa";
+import { DarkScreenContext } from "../../contextos/DarkScreen/DarkScreenContext";
+
 export const Filter = (props) => {
+  const { mostrarFiltro, setMostrarFiltro } = props;
+  const { setShowDarkScreen } = useContext(DarkScreenContext);
+
+  const cerrarFormulario = () => {
+    setMostrarFiltro(false);
+    setShowDarkScreen(false);
+  };
   return (
-    <div className="contenedor-buscador">
+    <div className={`contenedor-filtro ${mostrarFiltro ? "show" : ""}`}>
+      <div className="row">
+        <div className="col-12 text-right">
+          <FaTimes className="pointer" onClick={cerrarFormulario}></FaTimes>
+        </div>
+      </div>
       <form
         noValidate
         onSubmit={(e) => {
@@ -9,20 +25,20 @@ export const Filter = (props) => {
       >
         <div className="form-group">
           <label htmlFor="marca">Marca:</label>
-          <select className="form-control">
+          <select className="form-control" id="marca">
             <option value="opel">Opel</option>
             <option value="bmw">BMW</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="marca">Modelo:</label>
-          <select className="form-control">
+          <label htmlFor="modelo">Modelo:</label>
+          <select className="form-control" id="modelo">
             <option value="-1">-</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="contrasenya">Precio:</label>
-          <select className="form-control">
+          <label htmlFor="precio">Precio:</label>
+          <select className="form-control" id="precio">
             <option value="-1">Hasta</option>
             <option value="200">200 €</option>
             <option value="400">400 €</option>
@@ -32,8 +48,8 @@ export const Filter = (props) => {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="contrasenya">Kilometros:</label>
-          <select className="form-control">
+          <label htmlFor="kilometros">Kilometros:</label>
+          <select className="form-control" id="kilometros">
             <option value="0">0</option>
             <option value="30000">30000</option>
             <option value="50000">50000</option>
@@ -43,6 +59,17 @@ export const Filter = (props) => {
             <option value="160000">160000</option>
             <option value="180000">180000</option>
             <option value="200000">200000</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="orden">Ordenar por:</label>
+          <select className="form-control" id="orden">
+            <option value="-1">-</option>
+            <option value="nuevosRentings">Nuevos rentings</option>
+            <option value="menosKm">Menos km</option>
+            <option value="masKm">Más km</option>
+            <option value="rentingsBajos">Rentings más bajos</option>
+            <option value="rentingsAltos">Rentings más altos</option>
           </select>
         </div>
         <div className="form-group">

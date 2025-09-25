@@ -16,29 +16,34 @@ import { Auth } from "./paginas/Auth";
 import { PageNotFound } from "./paginas/PageNotFound";
 import { Profile } from "./paginas/Profile";
 import { Search } from "./paginas/Search";
+import { PaginaVehiculo } from "./paginas/PaginaVehiculo";
 
 function App() {
   return (
     <>
       <Router>
         <AuthContextProvider>
-          <DarkScreenContextProvider>
-            <Cabecera></Cabecera>
-            <main className="container-fluid">
-              <Routes>
-                <Route path="/" element={<Landing />}></Route>
-                <Route path="/search" element={<Search />}></Route>
-                <Route path="/login" element={<Auth />}></Route>
-                <Route path="/register" element={<Auth />}></Route>
-                <Route path="/profile" element={<Profile />}></Route>
-                <Route
-                  path="/inicio"
-                  element={<Navigate to="/" replace />}
-                ></Route>
-                <Route path="*" element={<PageNotFound />}></Route>
-              </Routes>
-            </main>
-          </DarkScreenContextProvider>
+            <DarkScreenContextProvider>
+              <Cabecera></Cabecera>
+              <main className="container-fluid">
+                <Routes>
+                  <Route path="/" element={<Landing />}></Route>
+                  <Route path="/search" element={<Search />}></Route>
+                  <Route
+                    path="/search/vehicle/:idVehiculo"
+                    element={<PaginaVehiculo />}
+                  ></Route>
+                  <Route path="/login" element={<Auth />}></Route>
+                  <Route path="/register" element={<Auth />}></Route>
+                  <Route path="/profile" element={<Profile />}></Route>
+                  <Route
+                    path="/inicio"
+                    element={<Navigate to="/" replace />}
+                  ></Route>
+                  <Route path="*" element={<PageNotFound />}></Route>
+                </Routes>
+              </main>
+            </DarkScreenContextProvider>
         </AuthContextProvider>
       </Router>
       <Footer></Footer>

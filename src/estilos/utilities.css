@@ -83,3 +83,15 @@ input:checked + .slider:before {
 .invisible {
   visibility: hidden;
 }
+.relative {
+  position: relative;
+}
+.btn.btn-principal {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: var(--color-principal);
+  color: #fff;
+}
+.btn.btn-principal:hover {
+  color: #fff;
+}

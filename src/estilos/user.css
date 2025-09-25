@@ -24,8 +24,7 @@
   display: block;
 }
 .dato-texto,
-.profile-mail,
-.btn.btn-ver-vehiculos {
+.profile-mail {
   font-size: 14px;
   font-weight: bold;
 }
@@ -40,10 +39,6 @@
   width: 45px;
   height: 45px;
   color: var(--color-principal);
-}
-.btn.btn-ver-vehiculos {
-  background-color: var(--color-principal);
-  color: #fff;
 }
 .icono-atencion {
   font-size: 100px;
