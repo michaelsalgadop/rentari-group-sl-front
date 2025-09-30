@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAlert } from "../hooks/useAlert";
 import { useFetch } from "../hooks/useFetch";
 import { Loading } from "../componentes/Loading";
@@ -12,24 +12,80 @@ import { useRenting } from "../hooks/useRenting.js";
 import { BtnBack } from "../componentes/Helpers/BtnBack.js";
 import { BtnScrollIntoView } from "../componentes/Helpers/BtnScrollIntoView.js";
 import { useObserver } from "../hooks/useObserver.js";
+import { useJWT } from "../hooks/useJWT.js";
 
 export const PaginaVehiculo = () => {
   const urlAPI = process.env.REACT_APP_URL_API;
   const { idVehiculo } = useParams();
   const [vehiculo, setVehiculo] = useState(null);
-
-  const { alertError } = useAlert();
+  const navigate = useNavigate();
+  const { alertError, alertSuccessFunction } = useAlert();
   const { getResponse } = useFetch();
   const { cambiarMesesRenting, meses, cuota, total, setCuotaBase } =
     useRenting();
   const { ref: elementRef, showArrowToElementToView, goToView } = useObserver();
+  const { getItemJWT } = useJWT();
 
-  const crearRentingTemporal = () => {
-    console.log("temporal");
+  const crearRentingTemporal = async () => {
+    try {
+      const rentingRealizar = {
+        idVehiculo,
+        meses,
+        cuota,
+        total,
+      };
+      const resp = await getResponse(`${urlAPI}rentings/pending`, {
+        method: "POST",
+        headers: { "content-Type": "application/json" },
+        body: JSON.stringify(rentingRealizar),
+      });
+      if (!resp.ok) {
+        const { message } = await resp.json();
+        alertError(message);
+      } else {
+        const { ok, messageTitle, messageBody } = await resp.json();
+        if (ok) {
+          alertSuccessFunction(messageTitle, messageBody, () =>
+            navigate("/login"),
+          );
+        } else {
+          alertError(
+            "Ha ocurrido un error realizando la reserva, consulte al departamento técnico.",
+          );
+        }
+      }
+    } catch (error) {
+      alertError(error.message);
+    }
   };
-  const crearRenting = () => {
-    console.log("normal");
+  const realizarRenting = async () => {
+    try {
+      const idUsuario = getItemJWT("idUsuario");
+      const datosRenting = {
+        id_vehiculo: idVehiculo,
+        meses,
+        cuota,
+        total,
+        idUsuario,
+      };
+      const resp = await getResponse(`${urlAPI}rentings/create`, {
+        method: "POST",
+        headers: { "content-Type": "application/json" },
+        body: JSON.stringify(datosRenting),
+      });
+      if (!resp.ok) {
+        const { message } = await resp.json();
+        alertError(message);
+      } else {
+        const { ok, messageTitle, messageBody } = await resp.json();
+        if (ok)
+          alertSuccessFunction(messageTitle, messageBody, () => navigate("/"));
+      }
+    } catch (error) {
+      alertError(error.message);
+    }
   };
+  const crearRenting = async () => await realizarRenting();
 
   const cargarVehiculo = useCallback(async () => {
     try {
@@ -43,8 +99,8 @@ export const PaginaVehiculo = () => {
       }
     } catch (error) {
       alertError(error.message);
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    }
+  }, [alertError, getResponse, idVehiculo, urlAPI]);
   useEffect(() => {
     (async () => {
       await cargarVehiculo();

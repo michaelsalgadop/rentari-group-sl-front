@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import Swal from "sweetalert2";
 
 export const useAlert = () => {
@@ -9,12 +10,23 @@ export const useAlert = () => {
       showConfirmButton: false,
       timer: 1500,
     });
-  const alertError = (msg) =>
+  const alertSuccessFunction = useCallback((msgTitle, msgBody = "", callback = null) =>
     Swal.fire({
-      icon: "error",
-      title: "ERROR",
-      text: msg,
-    });
+      icon: "success",
+      title: msgTitle,
+      text: msgBody,
+    }).then((result) => {
+      if (result.isConfirmed && callback) callback();
+    }),[]);
+  const alertError = useCallback(
+    (msg) =>
+      Swal.fire({
+        icon: "error",
+        title: "ERROR",
+        text: msg,
+      }),
+    [],
+  );
   const alertErrorHTML = (msg) =>
     Swal.fire({
       icon: "error",
@@ -52,5 +64,12 @@ export const useAlert = () => {
       showConfirmButton: false,
       timer: 1500,
     }).then(funcion());
-  return { alertSuccess, alertError, alertInfo, alertConfirm, alertErrorHTML };
+  return {
+    alertSuccess,
+    alertSuccessFunction,
+    alertError,
+    alertInfo,
+    alertConfirm,
+    alertErrorHTML,
+  };
 };

@@ -23,6 +23,11 @@ export const useRenting = () => {
   const setCuotaBase = useCallback((cuotaBase) => {
     setPrecioCuotaBase(cuotaBase);
   }, []);
-
-  return { cambiarMesesRenting, meses, cuota, total, setCuotaBase };
+  return {
+    cambiarMesesRenting,
+    meses,
+    cuota,
+    total,
+    setCuotaBase,
+  };
 };

@@ -21,8 +21,8 @@ export const Search = () => {
       }
     } catch (error) {
       alertError(error.message);
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    }
+  }, [alertError, getResponse, urlAPI]);
   useEffect(() => {
     (async () => {
       await getVehiculos();

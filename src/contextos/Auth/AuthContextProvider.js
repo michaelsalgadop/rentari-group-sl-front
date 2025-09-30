@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { AuthContext, AUTH_MODES } from "./AuthContext";
 
 export const AuthContextProvider = (props) => {
@@ -22,10 +22,10 @@ export const AuthContextProvider = (props) => {
   const loguearUsuario = () => {
     setLogueado(true);
   };
-  const desloguearUsuario = () => {
+  const desloguearUsuario = useCallback(() => {
     localStorage.removeItem("token");
     setLogueado(false);
-  };
+  }, []);
   return (
     <AuthContext.Provider
       value={{

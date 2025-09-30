@@ -57,8 +57,15 @@ export const Profile = () => {
     } catch (error) {
       alertError(error.message);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [
+    alertError,
+    desloguearUsuario,
+    formatearAFechaLocal,
+    formatearNumeroAImporte,
+    getResponse,
+    navigate,
+    urlAPI,
+  ]);
   useEffect(() => {
     try {
       if (datosUsuario) return;
@@ -73,8 +80,7 @@ export const Profile = () => {
         `Error al intentar cargar datos del usuario: ${error.message}`,
       );
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [datosUsuario]);
+  }, [alertError, cargarDatosUsuario, datosUsuario, getItemJWT, role]);
   return datosUsuario ? (
     <div className="cuerpo-pagina">
       <div className="espaciado-bloques row">
