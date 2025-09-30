@@ -120,6 +120,7 @@ export const FormularioAuth = (props) => {
                       className="form-control"
                       value={datosFormulario.nombreUsuario}
                       onChange={setData}
+                      autoComplete="username"
                     />
                   </div>
                 )}
@@ -132,6 +133,7 @@ export const FormularioAuth = (props) => {
                     className="form-control"
                     value={datosFormulario.correo}
                     onChange={setData}
+                    autoComplete="email"
                   />
                 </div>
                 <div className="form-group">
@@ -143,6 +145,11 @@ export const FormularioAuth = (props) => {
                     className="form-control"
                     value={datosFormulario.contrasenya}
                     onChange={setData}
+                    autoComplete={
+                      authMode === AUTH_MODES.REGISTER
+                        ? "new-password"
+                        : "current-password"
+                    }
                   />
                 </div>
                 <div className="form-group">

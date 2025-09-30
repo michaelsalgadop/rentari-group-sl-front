@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { jwtDecode } from "jwt-decode";
 
 export const useJWT = () => {
@@ -14,7 +14,10 @@ export const useJWT = () => {
     }
   }, [token]);
 
-  const getItemJWT = (item) => (cargaUtil ? cargaUtil.infoToken[item] : null);
+  const getItemJWT = useCallback(
+    (item) => (cargaUtil ? cargaUtil.infoToken[item] : null),
+    [cargaUtil],
+  );
 
   return { getItemJWT };
 };
