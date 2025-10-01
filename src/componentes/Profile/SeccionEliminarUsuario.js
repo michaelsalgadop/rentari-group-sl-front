@@ -8,7 +8,7 @@ import { AuthContext } from "../../contextos/Auth/AuthContext";
 export const SeccionEliminarUsuario = () => {
   const urlAPI = process.env.REACT_APP_URL_API;
   const navigate = useNavigate();
-  const { alertConfirm, alertError, alertSuccess } = useAlert();
+  const { alertConfirm, alertError, alertSuccessFunction } = useAlert();
   const { getResponse } = useFetch();
   const { desloguearUsuario } = useContext(AuthContext);
 
@@ -30,9 +30,10 @@ export const SeccionEliminarUsuario = () => {
         alertError(message);
       } else {
         const { respuesta } = await resp.json();
-        alertSuccess(respuesta);
-        desloguearUsuario();
-        navigate("/");
+        alertSuccessFunction(respuesta, "", () => {
+          desloguearUsuario();
+          navigate("/");
+        });
       }
     } catch (error) {
       alertError(error.message);
