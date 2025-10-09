@@ -31,7 +31,9 @@ export const FormularioAuth = (props) => {
     );
 
   const contrasenyaValida = (contrasenya) =>
-    /^[A-Za-z\d@$!¡%*&]{8,}$/.test(contrasenya);
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!¡%*&])[A-Za-z\d@$!¡%*&]{8,}$/.test(
+      contrasenya,
+    );
 
   const comprobarDatosFormulario = (datosFormulario) => {
     const { nombreUsuario, correo, contrasenya } = datosFormulario;
@@ -47,7 +49,7 @@ export const FormularioAuth = (props) => {
     ) {
       resultado.okFormulario = false;
       resultado.mensajesFormulario.push(
-        "Nombre de usuario no es válido! Introduce un nombre de usuario de más de 2 carácteres y sin carácteres especiales!",
+        "Nombre de usuario no es válido! Introduce un nombre de usuario de entre 3 y 20 carácteres y sin carácteres especiales!",
       );
     }
     if (!correoValido(correo)) {

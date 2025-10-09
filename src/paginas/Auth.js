@@ -53,9 +53,8 @@ export const Auth = () => {
         authMode === AUTH_MODES.REGISTER
           ? "usuarios/register"
           : "usuarios/login";
-      const metodo = authMode === AUTH_MODES.REGISTER ? "POST" : "PUT";
       const resp = await getResponse(`${urlAPI}${ruta}`, {
-        method: metodo,
+        method: "POST",
         headers: { "content-Type": "application/json" },
         body: JSON.stringify(datosFormulario),
       });

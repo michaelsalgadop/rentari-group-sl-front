@@ -8,7 +8,7 @@ import { useFetch } from "../hooks/useFetch";
 import { useJWT } from "../hooks/useJWT";
 import { AuthContext } from "../contextos/Auth/AuthContext";
 import { Loading } from "../componentes/Loading";
-import { DatosVehiculos } from "../componentes/Profile/DatosVehiculos";
+/* import { DatosVehiculos } from "../componentes/Profile/DatosVehiculos"; */
 import { SeccionEliminarUsuario } from "../componentes/Profile/SeccionEliminarUsuario";
 
 export const Profile = () => {
@@ -88,13 +88,13 @@ export const Profile = () => {
           <DatosUsuario datosUsuario={datosUsuario}></DatosUsuario>
         </div>
       </div>
-      {datosUsuario.presupuesto.total_rentings > 0 && (
+      {/* {datosUsuario.presupuesto.total_rentings > 0 && (
         <div className="espaciado-bloques row">
           <div className="col-12 text-center">
             <DatosVehiculos datosUsuario={datosUsuario}></DatosVehiculos>
           </div>
         </div>
-      )}
+      )} */}
       <div className="espaciado-bloques row">
         <div className="col-12 col-md-8 offset-md-2">
           <DatosPresupuesto datosUsuario={datosUsuario}></DatosPresupuesto>
