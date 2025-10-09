@@ -95,3 +95,7 @@ input:checked + .slider:before {
 .btn.btn-principal:hover {
   color: #fff;
 }
+.btn.btn-default {
+  padding-left: 0;
+  color: var(--color-principal);
+}

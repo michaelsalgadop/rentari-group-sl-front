@@ -1,4 +1,3 @@
-
 # 🚗 Rentari
 
 **Rentari** es una aplicación web diseñada para cubrir las necesidades de movilidad de nuestros clientes, permitiéndoles disponer de un coche —o varios— sin necesidad de adquirirlo permanentemente.
@@ -9,10 +8,10 @@
 
 - 🔍 **Catálogo de vehículos**
   - Furgonetas, SUVs, berlinas, urbanos y más.
-  - Filtros por marca, modelo, precio, kilometros o tipo.
+  - Filtros con lupa y filtrado por precio, año, kilometros o orden en el que queremos que salgan los resultados.
 
 - 👤 **Panel de usuario**
-  - Historial de rentings realizados.
+  - Estamos actualmente trabajando para tener un historial de rentings realizados.
   - Seguimiento de presupuesto y gastos acumulados.
 
 - 💰 **Presupuestos automáticos**
@@ -52,23 +51,23 @@ npm start
 
 Rentari está actualmente en desarrollo activo. Las principales funcionalidades ya implementadas incluyen:
 
-- ✅ Catálogo interactivo  
-- ✅ Sistema de autenticación  
-- ✅ Gestión de rentings  
-- ✅ Diseño responsive (mobile & desktop)  
-- ✅ Almacenamiento de imágenes vía Supabase  
+- ✅ Catálogo interactivo
+- ✅ Sistema de autenticación
+- ✅ Gestión de rentings
+- ✅ Diseño responsive (mobile & desktop)
+- ✅ Almacenamiento de imágenes vía Supabase
 
 **Próximas mejoras:**
 
-- 💳 Integración de pagos (modo demo)  
-- 🛠️ Panel administrativo para gestión de flota  
-- 🔍 Filtros avanzados por disponibilidad y localización  
+- 💳 Integración de pagos (modo demo)
+- 🛠️ Panel administrativo para gestión de flota
+- 🔍 Filtros avanzados por disponibilidad y localización
 
 ---
 
 ## 📄 Nota legal
 
-Este proyecto es una demostración **educativa y ficticia**, sin ninguna finalidad comercial.  
+Este proyecto es una demostración **educativa y ficticia**, sin ninguna finalidad comercial.
 Las marcas de vehículos mostradas son utilizadas únicamente con fines ilustrativos y no representan una afiliación real con Rentari.
 
 ---

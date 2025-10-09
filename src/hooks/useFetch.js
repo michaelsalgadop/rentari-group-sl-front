@@ -11,7 +11,7 @@ export const useFetch = () => {
         if (!configuration) {
           configuration = { credentials: "include" };
         } else {
-          configuration.credentials = "include"; // 👈 sin esto no manda cookies
+          configuration.credentials = "include"; // sin esto no manda cookies
         }
         setLoading(true);
         const resp = await fetch(url, configuration);
@@ -33,5 +33,25 @@ export const useFetch = () => {
     },
     [navigate, setLoading],
   );
-  return { getResponse };
+  /**
+   * Esto es útil porque FormData permite enviar datos que
+   * pueden incluir archivos binarios (por ejemplo imágenes o PDFs) junto con texto.
+   * Por cada propiedad (dato), añade su valor (datos[dato])
+   * al objeto FormData que se le pasa como parámetro.
+   * Ejemplo:
+   * Si datos = { nombre: "Juan", edad: 30 },
+   * entonces el FormData contendrá:
+   *   nombre → "Juan"
+   *   edad → "30"
+   * @param {*} datosFormData instancia de la interfaz FormData
+   * @param {*} datosFormulario objeto con los datos del formulario
+   * @returns {FormData} FormData con los datos del formulario, ya sean strings, archivos, etc.
+   */
+  const appendearDatosFormData = async (datosFormData, datosFormulario) => {
+    for (const dato in datosFormulario) {
+      datosFormData.append(dato, datosFormulario[dato]);
+    }
+    return datosFormData;
+  };
+  return { getResponse, appendearDatosFormData };
 };
