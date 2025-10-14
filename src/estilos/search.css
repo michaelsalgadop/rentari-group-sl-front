@@ -8,12 +8,12 @@
   padding: 15px;
   border-radius: 10px;
   z-index: 200;
-  position: absolute;
+  position: fixed;
   display: none;
   min-width: calc(100vw - 30px);
-  top: -30px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 10px);
+  transform: translate(-50%, -50%);
   background-color: #fff;
 }
 .contenedor-filtro.show {
