@@ -43,7 +43,7 @@ export const NavbarLinks = (props) => {
       </li>
       <li>
         <NavLink
-          to="/rergrwgrg"
+          to="/about-us"
           className={classNameLink}
           onClick={() => accionNavLink()}
         >
