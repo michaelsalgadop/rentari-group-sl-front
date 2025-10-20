@@ -1,0 +1,90 @@
+.nuestra-mision {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-secundario);
+}
+.titulo-about {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-principal);
+  margin-bottom: 20px;
+}
+.parrafo-autor {
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--color-principal);
+  margin: 30px 0;
+}
+
+.parrafo-autor,
+.columna-imagen-autor {
+  text-align: center;
+}
+.seccion-protagonista.seccion-autor {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.parrafo-about {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+.imagen-autor {
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  filter: grayscale(1) brightness(0.5);
+}
+.motivational-words-autor {
+  position: absolute;
+  width: 267px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -12px);
+  z-index: 100;
+  color: #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.motivational-words-autor .parrafo-autor {
+  color: #fff;
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.motivational-words-autor .name-autor {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .motivational-words-autor {
+    width: 500px;
+    transform: translate(-50%, -30px);
+  }
+  .motivational-words-autor .parrafo-autor {
+    font-size: 1.8rem;
+  }
+  .motivational-words-autor .name-autor {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .parrafo-autor,
+  .columna-imagen-autor {
+    text-align: left;
+  }
+  .seccion-about,
+  .parrafo-about {
+    font-size: 24px;
+  }
+  .nuestra-mision {
+    font-size: 20px;
+  }
+  .parrafo-autor {
+    font-size: 34px;
+  }
+}

@@ -11,7 +11,7 @@ export const Landing = () => {
       <ComoFunciona></ComoFunciona>
       <Ventajas></Ventajas>
       <Testimonios></Testimonios>
-      <CTA></CTA>
+      <CTA titulo="No esperes más..." textoBtn="Empieza a comparar"></CTA>
     </>
   );
 };

@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import { schemaLogo } from "../schemas/layoutSchemas.js";
+
 export const Logo = (props) => {
   const { alt, className, width, height } = props;
   return (
@@ -10,3 +13,4 @@ export const Logo = (props) => {
     />
   );
 };
+Logo.propTypes = schemaLogo;
