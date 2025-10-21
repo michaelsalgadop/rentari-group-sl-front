@@ -1,7 +1,7 @@
 import React from "react";
 import { FaChevronLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import { schemaBtnBack } from "../../schemas/vehiclesSchemas";
+import { schemaBtnBack } from "../../schemas/helpersSchemas";
 
 export const BtnBack = React.memo((props) => {
   const { urlTo } = props;
