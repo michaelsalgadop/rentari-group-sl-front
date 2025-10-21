@@ -1,5 +1,6 @@
 import React from "react";
 import { FaChevronUp } from "react-icons/fa";
+import { schemaBtnScrollIntoView } from "../../schemas/helpersSchemas";
 
 export const BtnScrollIntoView = React.memo((props) => {
   const { showArrowToElementToView, title, goToView } = props;
@@ -15,3 +16,4 @@ export const BtnScrollIntoView = React.memo((props) => {
     </button>
   );
 });
+BtnScrollIntoView.propTypes = schemaBtnScrollIntoView;
