@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { CabeceraNavbarMobile } from "./CabeceraNavbarMobile";
 import { AuthLinks } from "./AuthLinks/AuthLinks.js";
 import { useCallback, useState } from "react";
+import { schemaNavbarLinks } from "../../../schemas/layoutSchemas.js";
 export const NavbarLinks = (props) => {
   const { isMobile, mostrarOcultarBarraMobile } = props;
 
@@ -60,3 +61,4 @@ export const NavbarLinks = (props) => {
     </ul>
   );
 };
+NavbarLinks.propTypes = schemaNavbarLinks;

@@ -1,6 +1,7 @@
 import { FaTimes } from "react-icons/fa";
 import { Logo } from "../../Logo.js";
 import { NavLink } from "react-router-dom";
+import { schemaCabeceraNavbarMobile } from "../../../schemas/layoutSchemas.js";
 
 export const CabeceraNavbarMobile = (props) => {
   const { isMobile, accionNavLink } = props;
@@ -27,3 +28,4 @@ export const CabeceraNavbarMobile = (props) => {
     </>
   );
 };
+CabeceraNavbarMobile.propTypes = schemaCabeceraNavbarMobile;
