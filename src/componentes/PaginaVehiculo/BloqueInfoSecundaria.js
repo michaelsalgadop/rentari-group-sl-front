@@ -1,3 +1,5 @@
+import { schemaBloqueInfoSecundaria } from "../../schemas/vehiclesSchemas";
+
 export const BloqueInfoSecundaria = (props) => {
   const { combustible, anyo, kilometros, cv, tipoVehiculo } = props;
   return (
@@ -57,3 +59,4 @@ export const BloqueInfoSecundaria = (props) => {
     </div>
   );
 };
+BloqueInfoSecundaria.propTypes = schemaBloqueInfoSecundaria;

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useAlert } from "../../hooks/useAlert";
 import { AuthContext } from "../../contextos/Auth/AuthContext";
 import { FaPhone } from "react-icons/fa6";
+import { schemaBtnRenting } from "../../schemas/vehiclesSchemas";
 
 export const BtnRenting = (props) => {
   const {
@@ -72,3 +73,4 @@ export const BtnRenting = (props) => {
     </>
   );
 };
+BtnRenting.propTypes = schemaBtnRenting;

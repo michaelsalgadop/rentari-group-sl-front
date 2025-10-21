@@ -1,5 +1,6 @@
 import { FaCircleInfo } from "react-icons/fa6";
 import { Stars } from "../Search/Stars.js";
+import { schemaBloqueInfoPrimaria } from "../../schemas/vehiclesSchemas.js";
 
 export const BloqueInfoPrimaria = (props) => {
   const { nombre, precio, anyo, kilometros } = props;
@@ -40,3 +41,4 @@ export const BloqueInfoPrimaria = (props) => {
     </div>
   );
 };
+BloqueInfoPrimaria.propTypes = schemaBloqueInfoPrimaria;
