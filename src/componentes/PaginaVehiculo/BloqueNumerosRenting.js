@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { useFormat } from "../../hooks/useFormat";
+import { schemaBloqueNumerosRenting } from "../../schemas/vehiclesSchemas.js";
 
 export const BloqueNumerosRenting = (props) => {
   const { precio, meses, total } = props;
@@ -53,3 +53,4 @@ export const BloqueNumerosRenting = (props) => {
     </div>
   );
 };
+BloqueNumerosRenting.propTypes = schemaBloqueNumerosRenting;

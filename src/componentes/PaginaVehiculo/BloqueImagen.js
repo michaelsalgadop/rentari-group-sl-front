@@ -1,3 +1,5 @@
+import { schemaBloqueImagen } from "../../schemas/vehiclesSchemas";
+
 export const BloqueImagen = (props) => {
   const { urlImagen, nombre } = props;
   const urlSupabase = process.env.REACT_APP_URL_SUPABASE;
@@ -14,3 +16,4 @@ export const BloqueImagen = (props) => {
     </div>
   );
 };
+BloqueImagen.propTypes = schemaBloqueImagen;
