@@ -1,3 +1,4 @@
+import { schemaNavbarMobile } from "../../schemas/layoutSchemas.js";
 import { NavbarLinks } from "./NavbarLinks/NavbarLinks.js";
 
 export const NavbarMobile = (props) => {
@@ -15,3 +16,4 @@ export const NavbarMobile = (props) => {
     </nav>
   );
 };
+NavbarMobile.propTypes = schemaNavbarMobile;

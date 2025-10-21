@@ -11,4 +11,8 @@ const schemaBtnScrollIntoView = {
   title: PropTypes.string.isRequired,
   goToView: PropTypes.func.isRequired,
 };
-export { schemaBtnBack, schemaBtnScrollIntoView };
+const schemaCTA = {
+  titulo: PropTypes.string.isRequired,
+  textoBtn: PropTypes.string.isRequired,
+};
+export { schemaBtnBack, schemaBtnScrollIntoView, schemaCTA };

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { schemaCTA } from "../../schemas/helpersSchemas";
 export const CTA = (props) => {
   const { titulo, textoBtn } = props;
   const navigate = useNavigate();
@@ -22,3 +23,4 @@ export const CTA = (props) => {
     </section>
   );
 };
+CTA.propTypes = schemaCTA;
