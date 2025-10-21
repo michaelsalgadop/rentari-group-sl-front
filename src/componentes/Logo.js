@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { schemaLogo } from "../schemas/layoutSchemas.js";
 
 export const Logo = (props) => {
