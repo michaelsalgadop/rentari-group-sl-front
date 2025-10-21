@@ -1,3 +1,5 @@
+import { schemaBtnHamburguesa } from "../../schemas/layoutSchemas";
+
 export const BtnHamburguesa = (props) => {
   const { showBar, mostrarOcultarBarraMobile } = props;
   return (
@@ -15,3 +17,4 @@ export const BtnHamburguesa = (props) => {
     </div>
   );
 };
+BtnHamburguesa.propTypes = schemaBtnHamburguesa;

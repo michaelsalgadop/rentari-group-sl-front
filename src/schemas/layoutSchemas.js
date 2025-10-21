@@ -6,4 +6,12 @@ const schemaLogo = {
   width: PropTypes.string,
   height: PropTypes.string,
 };
-export { schemaLogo };
+const schemaBtnHamburguesa = {
+  showBar: PropTypes.bool.isRequired,
+  mostrarOcultarBarraMobile: PropTypes.func.isRequired,
+};
+const schemaNavbarMobile = {
+  showBar: PropTypes.bool.isRequired,
+  mostrarOcultarBarraMobile: PropTypes.func.isRequired,
+};
+export { schemaLogo, schemaBtnHamburguesa, schemaNavbarMobile };
