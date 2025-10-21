@@ -7,6 +7,7 @@ import {
   AUTH_MODES,
 } from "../../../../contextos/Auth/AuthContext.js";
 import { useJWT } from "../../../../hooks/useJWT.js";
+import { schemaAuthLinks } from "../../../../schemas/layoutSchemas.js";
 export const AuthLinks = (props) => {
   const {
     accionNavLink,
@@ -107,3 +108,4 @@ export const AuthLinks = (props) => {
     </>
   );
 };
+AuthLinks.propTypes = schemaAuthLinks;
