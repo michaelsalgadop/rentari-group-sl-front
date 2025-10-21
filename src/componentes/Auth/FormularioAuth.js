@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext, AUTH_MODES } from "../../contextos/Auth/AuthContext";
 import { useAlert } from "../../hooks/useAlert";
+import { schemaFormularioAuth } from "../../schemas/authSchemas";
 
 export const FormularioAuth = (props) => {
   const { enviarCredenciales, enviarValidacionMail, setData, datosFormulario } =
@@ -197,3 +198,4 @@ export const FormularioAuth = (props) => {
     </div>
   );
 };
+FormularioAuth.propTypes = schemaFormularioAuth;

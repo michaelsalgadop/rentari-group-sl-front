@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFormulario } from "../../hooks/useFormulario";
 import { useAlert } from "../../hooks/useAlert";
+import { schemaValidacion } from "../../schemas/authSchemas";
 
 export const Validacion = (props) => {
   const { enviarCredenciales, codigo, correo, setMostrarValidacion } = props;
@@ -78,3 +79,4 @@ export const Validacion = (props) => {
     </div>
   );
 };
+Validacion.propTypes = schemaValidacion;
