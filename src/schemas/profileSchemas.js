@@ -31,4 +31,17 @@ const schemaDatosPresupuesto = {
     }).isRequired,
   }).isRequired,
 };
-export { schemaDatoPresupuesto, schemaDatosPresupuesto };
+const schemaDatosUsuario = {
+  datosUsuario: PropTypes.shape({
+    presupuesto: PropTypes.shape({
+      total_rentings: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      gasto_mensual: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      gasto_total: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      fecha_ultimo_renting: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.instanceOf(Date),
+      ]),
+    }).isRequired,
+  }).isRequired,
+};
+export { schemaDatoPresupuesto, schemaDatosPresupuesto, schemaDatosUsuario };
