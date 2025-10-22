@@ -1,3 +1,5 @@
+import { schemaDatosUsuario } from "../../schemas/profileSchemas";
+
 export const DatosUsuario = (props) => {
   const { datosUsuario } = props;
   const urlSupabase = process.env.REACT_APP_URL_SUPABASE;
@@ -27,3 +29,4 @@ export const DatosUsuario = (props) => {
     </article>
   );
 };
+DatosUsuario.propTypes = schemaDatosUsuario;

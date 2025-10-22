@@ -1,5 +1,6 @@
 import { FaTimes } from "react-icons/fa";
 import { useFormat } from "../../hooks/useFormat";
+import { schemaFilter } from "../../schemas/searchSchemas";
 
 export const Filter = (props) => {
   const {
@@ -133,3 +134,4 @@ export const Filter = (props) => {
     </div>
   );
 };
+Filter.propTypes = schemaFilter;
