@@ -45,10 +45,10 @@ function App() {
                 <Route path="*" element={<PageNotFound />}></Route>
               </Routes>
             </main>
+            <Footer></Footer>
           </DarkScreenContextProvider>
         </AuthContextProvider>
       </Router>
-      <Footer></Footer>
     </>
   );
 }

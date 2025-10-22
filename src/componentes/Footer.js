@@ -1,19 +1,20 @@
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Logo } from "./Logo";
+import { NavLink } from "react-router-dom";
 
 export const Footer = () => {
   return (
     <footer className="footer">
       <div className="row">
         <div className="footer-col col-12 col-md-4 form-group">
-          <a href="/">
+          <NavLink to="/">
             <Logo
               alt="Logo de Rentari, empresa especializada en Rentings de vehículos, en el pie de página."
               width="140px"
               height="140px"
               className="logo-footer img-fluid"
             ></Logo>
-          </a>
+          </NavLink>
         </div>
         <div className="footer-col col-12 col-md-4 form-group">
           <p className="bolder">Sobre Rentari:</p>
