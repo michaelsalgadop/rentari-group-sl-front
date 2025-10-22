@@ -2,6 +2,7 @@ import { FaArrowTrendUp, FaRegCalendar, FaSackDollar } from "react-icons/fa6";
 import { DatoPresupuesto } from "./DatoPresupuesto";
 import { FaCar } from "react-icons/fa";
 import { useFormat } from "../../hooks/useFormat";
+import { schemaDatosPresupuesto } from "../../schemas/profileSchemas";
 
 export const DatosPresupuesto = (props) => {
   const { datosUsuario } = props;
@@ -39,3 +40,4 @@ export const DatosPresupuesto = (props) => {
     </div>
   );
 };
+DatosPresupuesto.propTypes = schemaDatosPresupuesto;

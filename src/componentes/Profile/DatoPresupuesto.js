@@ -1,3 +1,5 @@
+import { schemaDatoPresupuesto } from "../../schemas/profileSchemas";
+
 export const DatoPresupuesto = (props) => {
   const { dato, texto, icono } = props;
   return (
@@ -8,3 +10,4 @@ export const DatoPresupuesto = (props) => {
     </li>
   );
 };
+DatoPresupuesto.propTypes = schemaDatoPresupuesto;
