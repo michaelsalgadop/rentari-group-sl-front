@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { AuthContext, AUTH_MODES } from "./AuthContext";
+import { schemaContextAuth } from "../../schemas/contextsSchemas";
 
 export const AuthContextProvider = (props) => {
   const token = localStorage.getItem("token");
@@ -43,3 +44,4 @@ export const AuthContextProvider = (props) => {
     </AuthContext.Provider>
   );
 };
+AuthContextProvider.propTypes = schemaContextAuth;
