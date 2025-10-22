@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaSliders } from "react-icons/fa6";
 import { DarkScreenContext } from "../../contextos/DarkScreen/DarkScreenContext";
+import { schemaIconFilter } from "../../schemas/searchSchemas";
 
 export const IconFilter = (props) => {
   const { setMostrarFiltro } = props;
@@ -22,3 +23,4 @@ export const IconFilter = (props) => {
     </button>
   );
 };
+IconFilter.propTypes = schemaIconFilter;
