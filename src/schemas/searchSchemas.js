@@ -14,4 +14,41 @@ const schemaFilter = {
   resetFormulario: PropTypes.func.isRequired,
   validarAnyo: PropTypes.func.isRequired,
 };
-export { schemaFilter };
+const schemaIconFilter = {
+  setMostrarFiltro: PropTypes.func.isRequired,
+};
+const schemaSearcher = {
+  filtrarBusqueda: PropTypes.func.isRequired,
+};
+const schemaStars = {
+  anyo: PropTypes.number.isRequired,
+  kilometros: PropTypes.number.isRequired,
+  precio: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+};
+const schemaVehicle = {
+  urlImagen: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  nombre: PropTypes.string.isRequired,
+  precio: PropTypes.number.isRequired,
+  combustible: PropTypes.string.isRequired,
+  anyo: PropTypes.number.isRequired,
+  kilometros: PropTypes.number.isRequired,
+  cv: PropTypes.number.isRequired,
+  tipoVehiculo: PropTypes.string.isRequired,
+};
+/**
+ * Esto permitiría [] sin romper la validación.
+ *
+ * Asegura que cada vehículo tenga todos los campos definidos de schemaVehicle.
+ */
+const schemaVehicles = {
+  vehiculos: PropTypes.arrayOf(PropTypes.shape(schemaVehicle)),
+};
+export {
+  schemaFilter,
+  schemaIconFilter,
+  schemaSearcher,
+  schemaStars,
+  schemaVehicle,
+  schemaVehicles,
+};

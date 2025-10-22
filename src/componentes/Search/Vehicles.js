@@ -1,5 +1,6 @@
 import { Vehicle } from "./Vehicle";
 import { Loading } from "../Loading";
+import { schemaVehicles } from "../../schemas/searchSchemas";
 export const Vehicles = (props) => {
   const { vehiculos } = props;
   const urlSupabase = process.env.REACT_APP_URL_SUPABASE;
@@ -26,3 +27,4 @@ export const Vehicles = (props) => {
     </>
   );
 };
+Vehicles.propTypes = schemaVehicles;

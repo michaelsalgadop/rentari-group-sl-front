@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Stars } from "./Stars";
+import { schemaVehicle } from "../../schemas/searchSchemas.js";
 
 export const Vehicle = (props) => {
   const { vehiculo } = props;
@@ -44,3 +45,4 @@ export const Vehicle = (props) => {
     </NavLink>
   );
 };
+Vehicle.propTypes = schemaVehicle;

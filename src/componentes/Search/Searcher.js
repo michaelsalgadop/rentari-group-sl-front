@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { useFormulario } from "../../hooks/useFormulario.js";
 import { DarkScreenContext } from "../../contextos/DarkScreen/DarkScreenContext.js";
 import { useAlert } from "../../hooks/useAlert.js";
+import { schemaSearcher } from "../../schemas/searchSchemas.js";
 
 export const Searcher = (props) => {
   const { filtrarBusqueda } = props;
@@ -78,3 +79,4 @@ export const Searcher = (props) => {
     </>
   );
 };
+Searcher.propTypes = schemaSearcher;

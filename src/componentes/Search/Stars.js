@@ -1,4 +1,5 @@
 import { useValoracionVehiculo } from "../../hooks/useValoracionVehiculo.js";
+import { schemaStars } from "../../schemas/searchSchemas.js";
 
 export const Stars = (props) => {
   const { anyo, kilometros, precio } = props;
@@ -20,3 +21,4 @@ export const Stars = (props) => {
     </div>
   );
 };
+Stars.propTypes = schemaStars;
