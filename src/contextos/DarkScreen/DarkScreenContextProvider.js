@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { DarkScreenContext } from "./DarkScreenContext";
+import { schemaContextDarkScreen } from "../../schemas/contextsSchemas";
 
 export const DarkScreenContextProvider = (props) => {
   const [showBar, setShowBar] = useState(false);
@@ -26,3 +27,4 @@ export const DarkScreenContextProvider = (props) => {
     </DarkScreenContext.Provider>
   );
 };
+DarkScreenContextProvider.propTypes = schemaContextDarkScreen;
