@@ -19,7 +19,7 @@ export const DatosUsuario = (props) => {
       <div className="row">
         <div className="col-12 profile-name-user text-center">
           <span title={datosUsuario.nombreUsuario}>
-            {datosUsuario.nombreUsuario.slice(0, 8) + "..."}
+            {datosUsuario.nombreUsuario.slice(0, 17) + "..."}
           </span>
         </div>
       </div>
