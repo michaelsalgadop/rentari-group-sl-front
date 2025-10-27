@@ -15,7 +15,7 @@ export const AuthContextProvider = (props) => {
   const desloguearUsuario = useCallback(() => {
     localStorage.removeItem("token");
     setLogueado(false);
-    logout({ returnTo: window.location.origin });
+    logout({ returnTo: process.env.REACT_APP_URL_PRINCIPAL });
   }, [logout]);
   return (
     <AuthContext.Provider
