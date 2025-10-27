@@ -15,6 +15,7 @@ export const AuthContextProvider = (props) => {
   const desloguearUsuario = useCallback(() => {
     localStorage.removeItem("token");
     setLogueado(false);
+    //Desloguear usuario auth0
     logout({
       logoutParams: {
         returnTo: window.location.origin,

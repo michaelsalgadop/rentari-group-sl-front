@@ -18,7 +18,9 @@ export const DatosUsuario = (props) => {
       </div>
       <div className="row">
         <div className="col-12 profile-name-user text-center">
-          {datosUsuario.nombreUsuario}
+          <span title={datosUsuario.nombreUsuario}>
+            {datosUsuario.nombreUsuario.slice(0, 8) + "..."}
+          </span>
         </div>
       </div>
       <div className="row">
