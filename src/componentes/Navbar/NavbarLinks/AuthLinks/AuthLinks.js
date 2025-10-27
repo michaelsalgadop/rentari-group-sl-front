@@ -15,8 +15,7 @@ export const AuthLinks = (props) => {
     mostrarOcultarDesplegable,
     mostrarPropiedadesPerfil,
   } = props;
-  const { logueado, cambiarEntreLoginYRegistro, desloguearUsuario } =
-    useContext(AuthContext);
+  const { logueado, desloguearUsuario } = useContext(AuthContext);
   const { getItemJWT } = useJWT();
   const [nombreUsuario, setNombreUsuario] = useState(null);
 
@@ -28,36 +27,16 @@ export const AuthLinks = (props) => {
   return (
     <>
       {!logueado && (
-        <>
-          <li>
-            <NavLink
-              to="/register"
-              className={classNameLink}
-              onClick={() =>
-                accionNavLink(() =>
-                  cambiarEntreLoginYRegistro(AUTH_MODES.REGISTER),
-                )
-              }
-            >
-              <FaUser className="icon-nav"></FaUser>
-              Registrarme
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/login"
-              className={classNameLink}
-              onClick={() =>
-                accionNavLink(() =>
-                  cambiarEntreLoginYRegistro(AUTH_MODES.LOGIN),
-                )
-              }
-            >
-              <FaArrowRightToBracket className="icon-nav"></FaArrowRightToBracket>
-              Iniciar Sesión
-            </NavLink>
-          </li>
-        </>
+        <li>
+          <NavLink
+            to="/login-singup"
+            className={classNameLink}
+            onClick={() => accionNavLink()}
+          >
+            <FaUser className="icon-nav"></FaUser>
+            Login / Sign Up
+          </NavLink>
+        </li>
       )}
       {logueado && (
         <>

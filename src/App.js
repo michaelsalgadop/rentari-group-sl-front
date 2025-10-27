@@ -34,8 +34,7 @@ function App() {
                   path="/search/vehicle/:idVehiculo"
                   element={<PaginaVehiculo />}
                 ></Route>
-                <Route path="/login" element={<Auth />}></Route>
-                <Route path="/register" element={<Auth />}></Route>
+                <Route path="/login-singup" element={<Auth />}></Route>
                 <Route path="/profile" element={<Profile />}></Route>
                 <Route path="/about-us" element={<About />}></Route>
                 <Route

@@ -1,42 +1,30 @@
 import { useCallback, useState } from "react";
-import { AuthContext, AUTH_MODES } from "./AuthContext";
+import { AuthContext } from "./AuthContext";
 import { schemaContextAuth } from "../../schemas/contextsSchemas";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const AuthContextProvider = (props) => {
   const token = localStorage.getItem("token");
-  const [authMode, setAuthMode] = useState(AUTH_MODES.LOGIN); // Modo Loguin o Registro
   const [logueado, setLogueado] = useState(!!token);
   const [role, setRole] = useState("user");
+  const { logout } = useAuth0();
   const { children } = props;
-  const cambiarEntreLoginYRegistro = (accion) => {
-    if (
-      accion &&
-      (accion === AUTH_MODES.LOGIN || accion === AUTH_MODES.REGISTER)
-    ) {
-      setAuthMode(accion);
-    } else {
-      setAuthMode(
-        authMode === AUTH_MODES.LOGIN ? AUTH_MODES.REGISTER : AUTH_MODES.LOGIN,
-      );
-    }
-  };
-  const loguearUsuario = () => {
+  const loguearUsuario = useCallback(() => {
     setLogueado(true);
-  };
+  }, []);
   const desloguearUsuario = useCallback(() => {
     localStorage.removeItem("token");
     setLogueado(false);
-  }, []);
+    logout({ returnTo: window.location.origin });
+  }, [logout]);
   return (
     <AuthContext.Provider
       value={{
         logueado,
         token,
-        authMode,
         role,
         loguearUsuario,
         desloguearUsuario,
-        cambiarEntreLoginYRegistro,
         setRole,
       }}
     >

@@ -1,62 +1,31 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import { AuthContext, AUTH_MODES } from "../contextos/Auth/AuthContext";
-import { useFormulario } from "../hooks/useFormulario";
+import { AuthContext } from "../contextos/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "../hooks/useAlert";
 import { FormularioAuth } from "../componentes/Auth/FormularioAuth";
-import { Validacion } from "../componentes/Auth/Validacion";
 import { useFetch } from "../hooks/useFetch";
 import { useJWT } from "../hooks/useJWT";
-
+import { useAuth0 } from "@auth0/auth0-react";
 export const Auth = () => {
   const urlAPI = process.env.REACT_APP_URL_API;
   const navigate = useNavigate();
 
-  const [objetoFormulario, setObjectoFormulario] = useState({
-    correo: "",
-    nombreUsuario: "",
-    contrasenya: "",
-  });
-  const [mostrarValidacion, setMostrarValidacion] = useState(false);
-  const [codigo, setCodigo] = useState(null);
   const [rentingsPendientes, setRentingsPendientes] = useState(false);
 
-  const { authMode, loguearUsuario, token } = useContext(AuthContext);
+  const { loguearUsuario, token } = useContext(AuthContext);
 
-  const { setData, datosFormulario } = useFormulario(objetoFormulario);
   const { alertSuccess, alertSuccessFunction, alertError } = useAlert();
   const { getResponse } = useFetch();
   const { getItemJWT } = useJWT();
-  const enviarValidacionMail = async () => {
+  const { loginWithPopup, user, isAuthenticated, isLoading } = useAuth0();
+  const enviarCredenciales = useCallback(async () => {
     try {
-      const resp = await getResponse(`${urlAPI}usuarios/validacion`, {
+      if (!user) throw new Error("No se ha logueado el usuario correctamente!");
+      const { email: correo, nickname: nombreUsuario } = user;
+      const resp = await getResponse(`${urlAPI}usuarios/oauth/auth0`, {
         method: "POST",
         headers: { "content-Type": "application/json" },
-        body: JSON.stringify(datosFormulario),
-      });
-      if (!resp.ok) {
-        const { message } = await resp.json();
-        alertError(message);
-      } else {
-        setMostrarValidacion(true);
-        const { codigoVerificacion } = await resp.json();
-        setCodigo(codigoVerificacion.codigo);
-      }
-    } catch (error) {
-      alertError(error.message);
-    }
-  };
-
-  const enviarCredenciales = async () => {
-    try {
-      const ruta =
-        authMode === AUTH_MODES.REGISTER
-          ? "usuarios/register"
-          : "usuarios/login";
-      const resp = await getResponse(`${urlAPI}${ruta}`, {
-        method: "POST",
-        headers: { "content-Type": "application/json" },
-        body: JSON.stringify(datosFormulario),
+        body: JSON.stringify({ correo, nombreUsuario }),
       });
       if (!resp.ok) {
         const { message } = await resp.json();
@@ -77,7 +46,7 @@ export const Auth = () => {
       );
       console.error(error.message);
     }
-  };
+  }, [alertError, alertSuccess, getResponse, loguearUsuario, urlAPI, user]);
 
   const comprobarVehiculosPendientes = useCallback(async () => {
     try {
@@ -137,20 +106,14 @@ export const Auth = () => {
       }
     })();
   }, [token, rentingsPendientes, navigate, getItemJWT, confirmarRenting]);
+  useEffect(() => {
+    if (isLoading) return;
+    (async () => {
+      if (isAuthenticated) {
+        await enviarCredenciales();
+      }
+    })();
+  }, [enviarCredenciales, isAuthenticated, isLoading]);
 
-  return !mostrarValidacion || authMode === AUTH_MODES.LOGIN ? (
-    <FormularioAuth
-      enviarCredenciales={enviarCredenciales}
-      enviarValidacionMail={enviarValidacionMail}
-      setData={setData}
-      datosFormulario={datosFormulario}
-    ></FormularioAuth>
-  ) : (
-    <Validacion
-      enviarCredenciales={enviarCredenciales}
-      codigo={codigo}
-      correo={datosFormulario?.correo}
-      setMostrarValidacion={setMostrarValidacion}
-    ></Validacion>
-  );
+  return <FormularioAuth loginWithPopup={loginWithPopup}></FormularioAuth>;
 };

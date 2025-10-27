@@ -3,21 +3,27 @@ import Swal from "sweetalert2";
 
 export const useAlert = () => {
   const colorPrincipal = "#2f59d3";
-  const alertSuccess = (msg) =>
-    Swal.fire({
-      icon: "success",
-      title: msg,
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  const alertSuccessFunction = useCallback((msgTitle, msgBody = "", callback = null) =>
-    Swal.fire({
-      icon: "success",
-      title: msgTitle,
-      text: msgBody,
-    }).then((result) => {
-      if (result.isConfirmed && callback) callback();
-    }),[]);
+  const alertSuccess = useCallback(
+    (msg) =>
+      Swal.fire({
+        icon: "success",
+        title: msg,
+        showConfirmButton: false,
+        timer: 1500,
+      }),
+    [],
+  );
+  const alertSuccessFunction = useCallback(
+    (msgTitle, msgBody = "", callback = null) =>
+      Swal.fire({
+        icon: "success",
+        title: msgTitle,
+        text: msgBody,
+      }).then((result) => {
+        if (result.isConfirmed && callback) callback();
+      }),
+    [],
+  );
   const alertError = useCallback(
     (msg) =>
       Swal.fire({

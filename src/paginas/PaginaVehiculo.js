@@ -46,7 +46,7 @@ export const PaginaVehiculo = () => {
         const { ok, messageTitle, messageBody } = await resp.json();
         if (ok) {
           alertSuccessFunction(messageTitle, messageBody, () =>
-            navigate("/login"),
+            navigate("/login-singup"),
           );
         } else {
           alertError(

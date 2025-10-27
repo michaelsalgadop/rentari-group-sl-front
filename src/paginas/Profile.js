@@ -26,7 +26,7 @@ export const Profile = () => {
       const token = localStorage.getItem("token");
       if (!token) {
         desloguearUsuario();
-        navigate("/login");
+        navigate("/login-singup");
       }
       const resp = await getResponse(`${urlAPI}usuarios/profile`, {
         headers: {
@@ -84,7 +84,7 @@ export const Profile = () => {
   return datosUsuario ? (
     <div className="cuerpo-pagina">
       <div className="espaciado-bloques row">
-        <div className="col-12 col-md-4 offset-md-4">
+        <div className="col-12 col-md-6 offset-md-3">
           <DatosUsuario datosUsuario={datosUsuario}></DatosUsuario>
         </div>
       </div>
