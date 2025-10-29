@@ -2,7 +2,7 @@ import { Vehicle } from "./Vehicle";
 import { Loading } from "../Loading";
 import { schemaVehicles } from "../../schemas/searchSchemas";
 export const Vehicles = (props) => {
-  const { vehiculos } = props;
+  const { vehiculos, cargando } = props;
   const urlSupabase = process.env.REACT_APP_URL_SUPABASE;
   return (
     <>
@@ -21,8 +21,15 @@ export const Vehicles = (props) => {
             );
           })}
         </div>
+      ) : cargando ? (
+        <Loading />
       ) : (
-        <Loading></Loading>
+        <div className="row">
+          <div className="col-12 text-center color-primary bolder">
+            No se han encontrado vehiculos en estos momentos. Inténtalo más
+            tarde.
+          </div>
+        </div>
       )}
     </>
   );

@@ -43,6 +43,7 @@ const schemaVehicle = {
  */
 const schemaVehicles = {
   vehiculos: PropTypes.arrayOf(PropTypes.shape(schemaVehicle)),
+  cargando: PropTypes.bool.isRequired,
 };
 export {
   schemaFilter,
