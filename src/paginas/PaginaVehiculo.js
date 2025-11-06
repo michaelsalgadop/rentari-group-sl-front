@@ -25,7 +25,14 @@ export const PaginaVehiculo = () => {
     useRenting();
   const { ref: elementRef, showArrowToElementToView, goToView } = useObserver();
   const { getItemJWT } = useJWT();
-
+  /**
+   * Nuestro usuario todavía no está logueado y ha querido alquilar un vehiculo.
+   * Lo tipico de una web que sin registrarte te deja hacer ciertas acciones y luego te tienes que loguear
+   * para seguir con el proceso.
+   * Si nuestra respuesta viene bien, osea ok, pues nos mostrará un mensaje de vehiculo está pendiente de loguear
+   * o de registrarse, informa también al usuario de que ese renting se guardará durante x tiempo y te reenvia automáticamente
+   * a la página de loguin. Sino va bien pues muestra un error.
+   */
   const crearRentingTemporal = async () => {
     try {
       const rentingRealizar = {
@@ -58,6 +65,10 @@ export const PaginaVehiculo = () => {
       alertError(error.message);
     }
   };
+  /**
+   * Si nuestro usuario si esta logueado, pues directamente se hace el renting y te reenvia a la página principal,
+   * de lo cual te avisa. Si no va bien, muestra un error.
+   */
   const realizarRenting = async () => {
     try {
       const idUsuario = getItemJWT("idUsuario");
@@ -86,7 +97,9 @@ export const PaginaVehiculo = () => {
     }
   };
   const crearRenting = async () => await realizarRenting();
-
+  /**
+   * Carga los datos del vehiculo a mostrar
+   */
   const cargarVehiculo = useCallback(async () => {
     try {
       const resp = await getResponse(`${urlAPI}search/vehiculo/${idVehiculo}`);
@@ -101,11 +114,18 @@ export const PaginaVehiculo = () => {
       alertError(error.message);
     }
   }, [alertError, getResponse, idVehiculo, urlAPI]);
+  /**
+   * Se llama nada más el componente está cargado.
+   */
   useEffect(() => {
     (async () => {
       await cargarVehiculo();
     })();
   }, [cargarVehiculo]);
+  /**
+   * Se setea la cuota base con el precio del vehiculo, el cual después se puede modificar,
+   * dependiendo de cuanto tiempo de duración tendrá su renting, en meses.
+   */
   useEffect(() => {
     if (vehiculo) setCuotaBase(vehiculo.precio);
   }, [vehiculo, setCuotaBase]);

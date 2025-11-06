@@ -18,9 +18,16 @@ export const Auth = () => {
   const { getResponse } = useFetch();
   const { getItemJWT } = useJWT();
   const { loginWithPopup, user, isAuthenticated, isLoading } = useAuth0();
+  /**
+   * Función para enviar nuestras credenciales, introducidas por el usuario a nuestro servidor backend.
+   * Si la response es correcta, recibiremos un token de usuario, acto seguido se logueará nuestro usuario
+   * y se guardará el token en nuestro localstorage. Nos saldrá una alerta muy bonita de usuario logueado o registrado correctamente.
+   * Token tendrá nuetra id de usuario, nombre de usuario y rol del usuario(user o admin).
+   */
   const enviarCredenciales = useCallback(async () => {
     try {
       if (!user) throw new Error("No se ha logueado el usuario correctamente!");
+      // user contiene el email y nombre de usuario que necesitamos en nuestro servidor para registrar el usuario en nuestra BBDD.
       const { email: correo, nickname: nombreUsuario } = user;
       const resp = await getResponse(`${urlAPI}usuarios/oauth/auth0`, {
         method: "POST",
@@ -48,6 +55,11 @@ export const Auth = () => {
     }
   }, [alertError, alertSuccess, getResponse, loguearUsuario, urlAPI, user]);
 
+  /**
+   * Se utiliza cuando un usuario todavía no se ha logueado o registrado, pero ha alquilado un vehiculo.
+   * Ese vehiculo estará pendiente de alquilar, hasta que dicho usuario se logue o registre. Si no lo hace,
+   * ese vehiculo se "liberará".
+   */
   const comprobarVehiculosPendientes = useCallback(async () => {
     try {
       const resp = await getResponse(`${urlAPI}rentings/checkPendings`);
@@ -65,6 +77,11 @@ export const Auth = () => {
       alertError(error.message);
     }
   }, [alertError, alertSuccessFunction, getResponse, urlAPI]);
+  /**
+   * Cuando un usuario se ha logueado o registrado, y dicho usuario antes de loguearse o registrarse(osea sin cuenta)
+   * se ha querido alquilar un vehiculo(el cual estaba pendiente), pues se confirma la operación y se alquila el vehiculo
+   * para dicho usuario.
+   */
   const confirmarRenting = useCallback(
     async (idUsuario) => {
       try {
@@ -89,12 +106,18 @@ export const Auth = () => {
     },
     [alertError, alertSuccessFunction, getResponse, navigate, urlAPI],
   );
+  /**
+   * Comprueba que hayan vehiculos pendientes.
+   */
   useEffect(() => {
     (async () => {
       await comprobarVehiculosPendientes();
     })();
   }, [comprobarVehiculosPendientes]);
-
+  /**
+   * Estará controlando que si en algún momento el token cambia(pasa de undefined o null a tener valor),
+   * pues hará la operación de confirmar el renting el cual estaba pendiente.
+   */
   useEffect(() => {
     if (!token) return;
     (async () => {
@@ -106,6 +129,14 @@ export const Auth = () => {
       }
     })();
   }, [token, rentingsPendientes, navigate, getItemJWT, confirmarRenting]);
+  /**
+   * Como estamos utilizando el contexto de Auth0, Auth0 nos envia unos parámetros, los cuales podemos recoger.
+   * En este caso este useEffect tendrá la tarea de ver que, si un usuario se loguea por Auth0(que de momento es nuestro
+   * modo de loguearse o registrarse), estará pendiente primero de que isLoading cambie, porque quiere decir
+   * que nuestro usuario no se ha logueado o registrado, y luego si isLoading cambia y isAuthenticated es true
+   * (osea se ha logueado/registrado), llamamos a nuestro enviarCredenciales para enviar los datos del usuario a
+   * nuestro servidor.
+   */
   useEffect(() => {
     if (isLoading) return;
     (async () => {

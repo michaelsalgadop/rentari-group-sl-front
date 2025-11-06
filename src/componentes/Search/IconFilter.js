@@ -6,7 +6,10 @@ import { schemaIconFilter } from "../../schemas/searchSchemas";
 export const IconFilter = (props) => {
   const { setMostrarFiltro } = props;
   const { setShowDarkScreen } = useContext(DarkScreenContext);
-
+  /**
+   * Mostrar filtro avanzado.
+   * @param {*} e evento del botón
+   */
   const mostrarFormularioFiltro = (e) => {
     e.preventDefault();
     setMostrarFiltro(true);

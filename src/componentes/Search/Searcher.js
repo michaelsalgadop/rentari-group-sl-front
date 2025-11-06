@@ -31,7 +31,13 @@ export const Searcher = (props) => {
   const { showDarkScreen, setShowDarkScreen } = useContext(DarkScreenContext);
 
   const { alertError } = useAlert();
-
+  /**
+   * Se encargará de buscar el/los vehiculo/s especificados en el filtro.
+   * Antes de eso, buscará si hay algunos carácteres incorrectos que hayamos podido introducir sin querer o queriendo,
+   * en caso de intento de inyección de código :)
+   * @param {*} e evento de nuestro botón
+   * @returns devolverá false si hay credenciales incorrectas en nuestro filtro. En caso de que no, pues hará el filtro.
+   */
   const buscarVehiculos = (e) => {
     e.preventDefault();
     checkearFiltroCerrado();
@@ -41,6 +47,9 @@ export const Searcher = (props) => {
     }
     filtrarBusqueda(datosFormulario);
   };
+  /**
+   * Checkea si el popup del filtro está abierto, y si está abierto lo cierra.
+   */
   const checkearFiltroCerrado = () => {
     if (mostrarFiltro) setMostrarFiltro(false);
     if (showDarkScreen) setShowDarkScreen(false);

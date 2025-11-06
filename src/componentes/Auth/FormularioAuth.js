@@ -2,6 +2,10 @@ import { schemaFormularioAuth } from "../../schemas/authSchemas";
 
 export const FormularioAuth = (props) => {
   const { loginWithPopup } = props;
+  /**
+   * Con esta función, abrimos el popup de Auth0, gracias a loginWithPopup
+   * @param {*} e es el evento que hemos capturado
+   */
   const loguearUsuario = async (e) => {
     e.preventDefault();
     // inicia popup/login con Auth0

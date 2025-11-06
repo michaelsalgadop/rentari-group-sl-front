@@ -8,6 +8,9 @@ export const Stars = (props) => {
     kilometros,
     precio,
   });
+  /**
+   * Mostrará la valoración en forma de estrellas con el calculo entre años del vehículo - kilometros que tiene - precio de renting
+   */
   return (
     <div className="stars">
       {[0, 1, 2, 3, 4].map((value, i) => {

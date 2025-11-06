@@ -9,7 +9,11 @@ export const NavbarLinks = (props) => {
 
   const [mostrarPropiedadesPerfil, setMostrarPropiedadesPerfil] =
     useState(false);
-
+  /**
+   * Cuando cliquemos una opcion del navbar, mirará si además tiene alguna callback que se deba ejecutar,
+   * si es movil, pues que se oculte la barra lateral o en caso de que sea un dropdown que hemos clicado,
+   * pues cerrarlo el dropdown.
+   */
   const accionNavLink = useCallback(
     (callbackFunc = null) => {
       if (callbackFunc) callbackFunc();
@@ -18,7 +22,11 @@ export const NavbarLinks = (props) => {
     },
     [isMobile, mostrarOcultarBarraMobile],
   );
-
+  /**
+   * DRY(Don't repeat yourself), muchas opciones del navbar repetian classes, y decidí hacer esto y que no sea tan repetitivo.
+   * @param {*} isActive miramos si esa opción está activa y le aplicamos su respectivo css
+   * @returns
+   */
   const classNameLink = ({ isActive }) =>
     (isActive ? "activo " : "") + "link-nav d-flex align-items-center";
 

@@ -18,7 +18,9 @@ export const AuthLinks = (props) => {
   const { logueado, desloguearUsuario } = useContext(AuthContext);
   const { getItemJWT } = useJWT();
   const [nombreUsuario, setNombreUsuario] = useState(null);
-
+  /**
+   * Recogemos el nombre de usuario y lo mostramos en su opcion del navbar
+   */
   useEffect(() => {
     const nombreUsuarioAsignar = getItemJWT("nombreUsuario");
     if (nombreUsuarioAsignar) setNombreUsuario(nombreUsuarioAsignar);

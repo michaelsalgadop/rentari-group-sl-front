@@ -24,6 +24,10 @@ export const useFormulario = (objFormulario) => {
     !/('(?!\w)|`|\/\*|\*\/|´|"|;|=|<|>|--|\b(SELECT|INSERT|UPDATE|DELETE|DROP|UNION|OR|AND)\b|%|\(|\)|\*|\$|\.(?!\w)|\{|\}|\||\[|\]|\n|:)/i.test(
       texto,
     );
+  /**
+   * Validador de campos de formulario. Devolverá si los campos del formulario están bien cumplimentados.
+   * @returns {Boolean} devolverá si están bien cumplimentados.
+   */
   const validarDatosFormularioExceptoVacios = () =>
     Object.values(datosFormulario).every((value) => {
       if (value === "") return true;
@@ -31,6 +35,9 @@ export const useFormulario = (objFormulario) => {
       if (typeof value === "string") return validarTexto(value);
       return true;
     });
+  /**
+   * Validador si el año del formulario es correcto.
+   */
   const validarAnyo = (evt) => {
     const anyoValido = revisarAnyoCompletoValido(evt);
     evt.target.value = anyoValido;

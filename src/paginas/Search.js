@@ -10,6 +10,9 @@ export const Search = () => {
   const [cargandoVehiculos, setCargandoVehiculos] = useState(true);
   const { alertError } = useAlert();
   const { getResponse } = useFetch();
+  /**
+   * Se encarga de obtener todos los vehiculos disponibles de nuestra BBDD
+   */
   const getVehiculos = useCallback(async () => {
     try {
       setCargandoVehiculos(true);
@@ -28,6 +31,11 @@ export const Search = () => {
       alertError(error.message);
     }
   }, [alertError, getResponse, urlAPI]);
+  /**
+   * Filtro de busqueda que se encargará de buscar el/los vehiculo/s que encuentre en base de lo que le hayamos
+   * especificado en el filtro(en caso de que exista en la BBDD).
+   * @param {*} datosFiltro datos que hemos especificado en nuestro filtro.
+   */
   const filtrarBusqueda = async (datosFiltro) => {
     try {
       setCargandoVehiculos(true);
@@ -49,6 +57,9 @@ export const Search = () => {
       alertError(error.message);
     }
   };
+  /**
+   * Llama a nuestra función nada más cargar el componente para mostrar los vehículos.
+   */
   useEffect(() => {
     (async () => {
       await getVehiculos();

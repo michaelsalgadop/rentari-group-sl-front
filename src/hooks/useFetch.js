@@ -5,6 +5,15 @@ import { useNavigate } from "react-router-dom";
 export const useFetch = () => {
   const { setLoading } = useContext(DarkScreenContext);
   const navigate = useNavigate();
+  /**
+   * Función que utilizamos para enviar peticiones a la API del servidor.
+   * Más sofisticado y entendible, ya que mientras se hace la petición, nos mostrará un loading,
+   * hasta que obtengamos una respuesta.
+   * @param {String} url Url que apunta a nuestro servidor.
+   * @param {*} configuration Configuración de nuestra petición. Puede estar el tipo de petición, encabezado, body...
+   * o puede venir sin definir.
+   * @return Respuesta del servidor.
+   */
   const getResponse = useCallback(
     async (url, configuration) => {
       try {

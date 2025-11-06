@@ -1,14 +1,29 @@
 import { useCallback } from "react";
 
 export const useFormat = () => {
+  /**
+   * Recibimos una fecha y la mostramos en formato local
+   * @param {String} fecha fecha a formatear
+   * @returns {String} Fecha en formato local.
+   */
   const formatearAFechaLocal = useCallback(
     (fecha) => new Date(fecha).toLocaleDateString(),
     [],
   );
+  /**
+   * Recibimos una numero y lo formateamos para que sea un importe.
+   * @param {Number} numero numero a formatear
+   * @returns {String} Numero formateado
+   */
   const formatearNumeroAImporte = useCallback(
     (numero) => numero.toFixed(2) + " €",
     [],
   );
+  /**
+   * Recibimos una numero, el cual puede ser grande, y lo formateamos en formato local para ver el importe total.
+   * @param {Number} numero numero a formatear
+   * @returns {String} Numero formateado con decimales
+   */
   const formatearNumeroATotalImporte = (numero) => {
     try {
       const numeroParseado = parseFloat(numero);
@@ -22,10 +37,21 @@ export const useFormat = () => {
       return null;
     }
   };
+  /**
+   * Validar si el formato del año es correcto.
+   * @param {Event} evt evento del campo del número
+   * @returns {*} Si no es correcto, el campo se queda tal cual sin el número válido o si es valido devuelve el Number del año
+   */
   const formatoAnyo = (evt) =>
     ["e", "E", "+", "-", ".", ","].includes(evt.key)
       ? evt.preventDefault()
       : evt.target.valueAsNumber;
+  /**
+   * Validar si el año introducido es correcto y cumple con los parámetros establecidos.
+   * @param {Event} evt evento del campo del número
+   * @returns {Number} Devuelve un valor, el cual puede ser 0 en caso de año incorrecto, el año actual o el año
+   * introducido si es correcto.
+   */
   const revisarAnyoCompletoValido = (evt) => {
     let anyo = evt.target.value; // "" "1" "10" "100" "1000"
     const anyoActual = new Date().getFullYear();

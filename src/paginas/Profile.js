@@ -21,6 +21,9 @@ export const Profile = () => {
   const { desloguearUsuario } = useContext(AuthContext);
   const [datosUsuario, setDatosUsuario] = useState(null);
   const [role, setRole] = useState("user");
+  /**
+   * Se utiliza para obtener todos los datos de nuestro usuario y mostrarlos en nuestro perfil
+   */
   const cargarDatosUsuario = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
@@ -66,6 +69,9 @@ export const Profile = () => {
     navigate,
     urlAPI,
   ]);
+  /**
+   * Se encarga de llamar nada más se carga el componente a nuestra funcion de carga de datos de usuario
+   */
   useEffect(() => {
     try {
       if (datosUsuario) return;

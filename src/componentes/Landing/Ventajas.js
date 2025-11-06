@@ -78,6 +78,8 @@ export const Ventajas = () => {
               {listadoVentajasDesventajas
                 .filter(({ ventaja }) => ventaja === mostrarVentaja)
                 .map(({ icon, message, ventaja }, i) => {
+                  // Consulta entre todos los iconos que se encuentran en utilidades y trae el equivalente en FontAwesome
+                  // Y después lo muestra
                   const Icono = iconos[icon] || FaTimes;
                   return (
                     <li key={i} className="col-6 col-md-4 col-lg-2">

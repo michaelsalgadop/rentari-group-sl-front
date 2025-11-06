@@ -13,7 +13,9 @@ export const useJWT = () => {
       return null;
     }
   }, [token]);
-
+  /**
+   * Devuelve un item de dentro del token, por ejemplo el rol del usuario o el nombre del usuario.
+   */
   const getItemJWT = useCallback(
     (item) => (cargaUtil ? cargaUtil.infoToken[item] : null),
     [cargaUtil],

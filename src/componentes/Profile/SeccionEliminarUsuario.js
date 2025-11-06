@@ -11,7 +11,15 @@ export const SeccionEliminarUsuario = () => {
   const { alertConfirm, alertError, alertSuccessFunction } = useAlert();
   const { getResponse } = useFetch();
   const { desloguearUsuario } = useContext(AuthContext);
-
+  /**
+   * Se utiliza en caso de que queramos eliminar nuestra cuenta de usuario.
+   * Si tiene rentings activos no lo podrá eliminar y mostrará dicho mensaje.
+   * Si tiene rentings ya vencidos(todos sus rentings, sean 1 o varios), se desactivará su cuenta
+   * y se "anonimizará" pero quedará grabado su presupuesto.
+   * Si es un usuario sin ningún renting ni activo ni vencido, simplemente se borrará.
+   * @returns en caso de que el token está caducado o no exista en este momento, se desloguea el usuario
+   * y no continua la acción.
+   */
   const eliminarUsuario = async () => {
     try {
       const token = localStorage.getItem("token");
